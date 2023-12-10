@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Pry_Proyecto_Final_Primer_Parcial"
         tools:targetApi="31">
         <activity
+            android:name=".Memoria"
+            android:exported="false" />
+        <activity
+            android:name=".Bingo"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
