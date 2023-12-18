@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/BotonBingo"
+        android:id="@+id/btn_Bingo"
         android:layout_width="244dp"
         android:layout_height="106dp"
         android:background="@android:color/transparent"
@@ -21,10 +21,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.904"
-        app:srcCompat="@drawable/Botonbingo" />
+        app:srcCompat="@drawable/botonbingo" />
 
     <ImageButton
-        android:id="@+id/botonBingo"
+        android:id="@+id/btn_Memoria"
         android:layout_width="244dp"
         android:layout_height="106dp"
         android:background="@android:color/transparent"
@@ -39,7 +39,7 @@
         app:srcCompat="@drawable/botonmemoria" />
 
     <ImageButton
-        android:id="@+id/BotonSalir"
+        android:id="@+id/btn_Salir"
         android:layout_width="76dp"
         android:layout_height="50dp"
         android:background="@android:color/transparent"
