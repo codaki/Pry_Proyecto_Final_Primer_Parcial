@@ -1,13 +1,16 @@
 package com.example.pry_proyecto_final_primer_parcial
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -53,10 +56,15 @@ class Memoria : AppCompatActivity() {
         var ecuacion4 = 0
         var ecuacion5 = 0
         var ecuacion6 = 0
+        var ecuacion7 = 0
+        var ecuacion8 = 0
+        var ecuacion9 = 0
+        var ecuacion10 = 0
+        var ecuacion11 = 0
+        var ecuacion12 = 0
 
-    var turno = 1
-    var puntosj1 = 0
-    var puntosj2 = 0
+
+
     var numeroImagen = 1 //cuàntas veces di click
     var escuchar = true
     //</editor-fold>
@@ -82,6 +90,7 @@ class Memoria : AppCompatActivity() {
         iv_32 = findViewById(R.id.iv_32)
         iv_33 = findViewById(R.id.iv_33)
         iv_34 = findViewById(R.id.iv_34)
+
         atras = findViewById(R.id.btn_back)
 
         //ib_sonido = findViewById(R.id.ib_sonido)
@@ -102,12 +111,21 @@ class Memoria : AppCompatActivity() {
         iv_33.tag = "10"
         iv_34.tag = "11"
 
-        ecuacion1 = R.drawable.tarjeta1
-        ecuacion2 = R.drawable.tarjeta2
-        ecuacion3 = R.drawable.tarjeta3
-        ecuacion4 = R.drawable.tarjeta4
-        ecuacion5 = R.drawable.tarjeta5
-        ecuacion6 = R.drawable.tarjeta6
+        ecuacion1 = R.drawable.r1
+        ecuacion2 = R.drawable.r2
+        ecuacion3 = R.drawable.r3
+        ecuacion4 = R.drawable.r4
+        ecuacion5 = R.drawable.r5
+        ecuacion6 = R.drawable.r6
+
+        ecuacion7 = R.drawable.s1
+        ecuacion8 = R.drawable.s2
+        ecuacion9 = R.drawable.s3
+        ecuacion10 = R.drawable.s4
+        ecuacion11 = R.drawable.s5
+        ecuacion12 = R.drawable.s6
+
+
 
         atras.setOnClickListener(){
             Intent (this, MainActivity::class.java).also {
@@ -139,28 +157,40 @@ class Memoria : AppCompatActivity() {
         var tag = imagen.tag.toString().toInt()
         if (cartasArray[tag] == 11) {
             iv.setImageResource(ecuacion1)
+            iv.contentDescription = "1"
         } else if (cartasArray[tag] == 12) {
             iv.setImageResource(ecuacion2)
+            iv.contentDescription = "2"
         } else if (cartasArray[tag] == 13) {
             iv.setImageResource(ecuacion3)
+            iv.contentDescription = "3"
         } else if (cartasArray[tag] == 14) {
             iv.setImageResource(ecuacion4)
+            iv.contentDescription = "4"
         } else if (cartasArray[tag] == 15) {
             iv.setImageResource(ecuacion5)
+            iv.contentDescription = "5"
         } else if (cartasArray[tag] == 16) {
             iv.setImageResource(ecuacion6)
+            iv.contentDescription = "6"
         } else if (cartasArray[tag] == 21) {
-            iv.setImageResource(ecuacion1)
+            iv.setImageResource(ecuacion7)
+            iv.contentDescription = "1"
         } else if (cartasArray[tag] == 22) {
-            iv.setImageResource(ecuacion2)
+            iv.setImageResource(ecuacion8)
+            iv.contentDescription = "2"
         } else if (cartasArray[tag] == 23) {
-            iv.setImageResource(ecuacion3)
+            iv.setImageResource(ecuacion9)
+            iv.contentDescription = "3"
         } else if (cartasArray[tag] == 24) {
-            iv.setImageResource(ecuacion4)
+            iv.setImageResource(ecuacion10)
+            iv.contentDescription = "4"
         } else if (cartasArray[tag] == 25) {
-            iv.setImageResource(ecuacion5)
+            iv.setImageResource(ecuacion11)
+            iv.contentDescription = "5"
         } else if (cartasArray[tag] == 26) {
-            iv.setImageResource(ecuacion6)
+            iv.setImageResource(ecuacion12)
+            iv.contentDescription = "6"
         }
         if (numeroImagen == 1){
             imagen1 = iv
@@ -178,18 +208,9 @@ class Memoria : AppCompatActivity() {
     }
 
     private fun sonImagenesIguales() {
-        if (imagen1.drawable.constantState == imagen2.drawable.constantState){
+        if (imagen1.contentDescription == imagen2.contentDescription){
             imagen1.visibility = View.INVISIBLE
             imagen2.visibility = View.INVISIBLE
-            if (turno == 1){
-                puntosj1++
-                //tv_j1.setTextColor(Color.GRAY)
-                //tv_j2.setTextColor(Color.WHITE)
-            }else if (turno == 2){
-                puntosj2++
-                //tv_j1.setTextColor(Color.WHITE)
-                //tv_j2.setTextColor(Color.GRAY)
-            }
             imagen1.isEnabled = false
             imagen2.isEnabled = false
             imagen1.tag = ""
@@ -197,15 +218,6 @@ class Memoria : AppCompatActivity() {
         }else{
             imagen1.setImageResource(R.drawable.tarjeta)
             imagen2.setImageResource(R.drawable.tarjeta)
-            if (turno == 1){
-                turno = 2
-                //tv_j1.setTextColor(Color.WHITE)
-                //tv_j2.setTextColor(Color.GRAY)
-            }else if (turno == 2){
-                turno = 1
-                //tv_j1.setTextColor(Color.GRAY)
-                //tv_j2.setTextColor(Color.WHITE)
-            }
         }
         iv_11.isEnabled = !iv_11.tag.toString().isEmpty()
         iv_12.isEnabled = !iv_12.tag.toString().isEmpty()
@@ -236,22 +248,30 @@ class Memoria : AppCompatActivity() {
             iv_33.visibility == View.INVISIBLE &&
             iv_34.visibility == View.INVISIBLE
         ){
-            val builder = android.app.AlertDialog.Builder(this)
-            builder.setTitle("Fin del juego").setMessage("Jugador 1: $puntosj1\nJugador 2: $puntosj2")
-                .setCancelable(false)
-                .setPositiveButton("Reiniciar"){dialog, which ->
-                    val intent = intent
-                    finish()
-                    startActivity(intent)
-                }
-                .setNegativeButton("Salir"){dialog, which ->
-                    finish()
-                }
-            builder.show()
+           //victoria
+            mostrarPopupVictoria()
         }
 
     }
+    fun mostrarPopupVictoria() {
+        val mDialog = Dialog(this)
+        mDialog.setContentView(R.layout.popup_victoria)
+        mDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val buttonJugarDeNuevo = mDialog.findViewById<Button>(R.id.btn_jugar_de_nuevo)
+        val buttonSalir = mDialog.findViewById<Button>(R.id.btn_Salir)
 
+        buttonJugarDeNuevo.setOnClickListener {
+            mDialog.dismiss()
+            recreate()
+        }
+
+        buttonSalir.setOnClickListener {
+            finish()
+        }
+
+        mDialog.show()
+        mDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+    }
     private fun deshabilitar(){
         iv_11.isEnabled = false
         iv_12.isEnabled = false
