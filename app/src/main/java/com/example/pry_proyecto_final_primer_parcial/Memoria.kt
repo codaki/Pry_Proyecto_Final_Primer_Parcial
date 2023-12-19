@@ -18,52 +18,59 @@ import org.w3c.dom.Text
 
 class Memoria : AppCompatActivity() {
     //<editor-fold desc="Imagenes">
-        lateinit var iv_11: ImageView
-        lateinit var iv_12: ImageView
-        lateinit var iv_13: ImageView
-        lateinit var iv_14: ImageView
+    lateinit var iv_11: ImageView
+    lateinit var iv_12: ImageView
+    lateinit var iv_13: ImageView
+    lateinit var iv_14: ImageView
 
-        lateinit var iv_21: ImageView
-        lateinit var iv_22: ImageView
-        lateinit var iv_23: ImageView
-        lateinit var iv_24: ImageView
+    lateinit var iv_21: ImageView
+    lateinit var iv_22: ImageView
+    lateinit var iv_23: ImageView
+    lateinit var iv_24: ImageView
 
-        lateinit var iv_31: ImageView
-        lateinit var iv_32: ImageView
-        lateinit var iv_33: ImageView
-        lateinit var iv_34: ImageView
+    lateinit var iv_31: ImageView
+    lateinit var iv_32: ImageView
+    lateinit var iv_33: ImageView
+    lateinit var iv_34: ImageView
     //</editor-fold>
 
     //<editor-fold desc="Otros">
-        lateinit var ib_sonido: ImageButton
-        lateinit var atras: ImageButton
-        lateinit var imagen1: ImageView
-        lateinit var imagen2: ImageView
-        private var mpVictoria: MediaPlayer? = null
-        private var mpClick: MediaPlayer? = null
+    //lateinit var tv_j1: TextView
+    //lateinit var tv_j2: TextView
+    lateinit var ib_sonido: ImageButton
+    lateinit var atras: ImageButton
+    lateinit var imagen1: ImageView
+    lateinit var imagen2: ImageView
+    lateinit var mp: MediaPlayer
+    lateinit var mp_fondo: MediaPlayer
+    lateinit var ecuacion: TextView
+    lateinit var resultado: TextView
+    private var mpVictoria: MediaPlayer? = null
+    private var mpClick: MediaPlayer? = null
     //</editor-fold>
 
     //<editor-fold desc="Variables">
-        var cartasArray =
-            arrayOf(11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26)
-        var ecuacion1 = 0
-        var ecuacion2 = 0
-        var ecuacion3 = 0
-        var ecuacion4 = 0
-        var ecuacion5 = 0
-        var ecuacion6 = 0
-        var ecuacion7 = 0
-        var ecuacion8 = 0
-        var ecuacion9 = 0
-        var ecuacion10 = 0
-        var ecuacion11 = 0
-        var ecuacion12 = 0
+    var cartasArray =
+        arrayOf(11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26)
+    var ecuacion1 = 0
+    var ecuacion2 = 0
+    var ecuacion3 = 0
+    var ecuacion4 = 0
+    var ecuacion5 = 0
+    var ecuacion6 = 0
+    var ecuacion7 = 0
+    var ecuacion8 = 0
+    var ecuacion9 = 0
+    var ecuacion10 = 0
+    var ecuacion11 = 0
+    var ecuacion12 = 0
 
 
 
     var numeroImagen = 1 //cuàntas veces di click
     var escuchar = true
     //</editor-fold>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +80,6 @@ class Memoria : AppCompatActivity() {
         mpClick = MediaPlayer.create(this, R.raw.click)
         mpVictoria = MediaPlayer.create(this, R.raw.completado)
     }
-
     private fun enlazarGUI(){
         iv_11 = findViewById(R.id.iv_11)
         iv_12 = findViewById(R.id.iv_12)
@@ -89,6 +95,10 @@ class Memoria : AppCompatActivity() {
         iv_34 = findViewById(R.id.iv_34)
 
         atras = findViewById(R.id.btn_back)
+
+        //ib_sonido = findViewById(R.id.ib_sonido)
+        //ib_sonido.setColorFilter(Color.GREEN)
+        //sonido("fondo",true)
 
         //etiqueta para cartas
         iv_11.tag = "0"
@@ -126,6 +136,8 @@ class Memoria : AppCompatActivity() {
             }
         }
         cartasArray.shuffle()
+        //tv_j1.setTextColor(Color.GRAY)
+        //tv_j2.setTextColor(Color.WHITE)
         iv_11.setOnClickListener { seleccionar(it) }
         iv_12.setOnClickListener { seleccionar(it) }
         iv_13.setOnClickListener { seleccionar(it) }
@@ -142,6 +154,7 @@ class Memoria : AppCompatActivity() {
     fun seleccionar(imagen: View){
 
         verificar(imagen)
+        mpClick?.start()
     }
     private fun verificar(imagen: View) {
         var iv = (imagen as ImageView)
@@ -239,7 +252,7 @@ class Memoria : AppCompatActivity() {
             iv_33.visibility == View.INVISIBLE &&
             iv_34.visibility == View.INVISIBLE
         ){
-           //victoria
+            //victoria
             mostrarPopupVictoria()
         }
 
@@ -259,12 +272,10 @@ class Memoria : AppCompatActivity() {
         buttonSalir.setOnClickListener {
             finish()
         }
-
         mpVictoria?.start()
         mDialog.show()
         mDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }
-
     private fun deshabilitar(){
         iv_11.isEnabled = false
         iv_12.isEnabled = false
@@ -280,4 +291,28 @@ class Memoria : AppCompatActivity() {
         iv_34.isEnabled = false
     }
 
+    /*
+
+        private fun sonido(sonidoName: String, loop: Boolean=false) {
+            var resID = resources.getIdentifier(
+                sonidoName, "raw", packageName
+            )
+            if (sonidoName == "fondo") {
+                mp_fondo = MediaPlayer.create(this, resID)
+                mp_fondo.isLooping = loop
+                mp_fondo.setVolume(0.04F, 0.04F)
+                if (!mp_fondo.isPlaying){
+                    mp_fondo.start()
+                }
+            } else {
+                mp = MediaPlayer.create(this, resID)
+                mp.setOnCompletionListener (MediaPlayer.OnCompletionListener {mediaPlayer ->
+                    mediaPlayer.stop()
+                    mediaPlayer.release()
+                })
+                if (!mp.isPlaying){
+                    mp.start()
+                }
+            }
+        }*/
 }

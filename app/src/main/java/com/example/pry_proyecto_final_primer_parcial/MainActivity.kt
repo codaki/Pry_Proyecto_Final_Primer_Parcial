@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         mediaPlayerFondo?.isLooping = true
 
         // Ajusta el volumen (rango de 0.0 a 1.0)
-        mediaPlayerFondo?.setVolume(0.2f, 0.2f) // Ajusta según lo bajo que quieras el volumen
+        mediaPlayerFondo?.setVolume(0.4f, 0.4f) // Ajusta según lo bajo que quieras el volumen
 
         // Inicia la reproducción
         mediaPlayerFondo?.start()
