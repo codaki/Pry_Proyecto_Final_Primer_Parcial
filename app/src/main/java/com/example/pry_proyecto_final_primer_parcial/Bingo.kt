@@ -119,7 +119,6 @@ class Bingo : AppCompatActivity() {
         val num2 = hint.split(" ")[1].toInt()
 
         if (num1 == posicionActual.first && num2 == posicionActual.second){
-            Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show()
             posicionesVistas[num1][num2] = true
             button.text = "✓"
             cambiarPosicionActual()
