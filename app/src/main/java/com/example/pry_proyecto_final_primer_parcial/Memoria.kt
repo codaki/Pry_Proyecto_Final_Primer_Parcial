@@ -32,16 +32,12 @@ class Memoria : AppCompatActivity() {
     //</editor-fold>
 
     //<editor-fold desc="Otros">
-        //lateinit var tv_j1: TextView
-        //lateinit var tv_j2: TextView
         lateinit var ib_sonido: ImageButton
         lateinit var atras: ImageButton
         lateinit var imagen1: ImageView
         lateinit var imagen2: ImageView
-        lateinit var mp: MediaPlayer
-        lateinit var mp_fondo: MediaPlayer
-        lateinit var ecuacion: TextView
-        lateinit var resultado: TextView
+        private var mpVictoria: MediaPlayer? = null
+        private var mpClick: MediaPlayer? = null
     //</editor-fold>
 
     //<editor-fold desc="Variables">
@@ -66,7 +62,8 @@ class Memoria : AppCompatActivity() {
         setContentView(R.layout.activity_memoria)
         enlazarGUI()
 
-
+        mpClick = MediaPlayer.create(this, R.raw.click)
+        mpVictoria = MediaPlayer.create(this, R.raw.completado)
     }
 
     private fun enlazarGUI(){
@@ -83,10 +80,6 @@ class Memoria : AppCompatActivity() {
         iv_33 = findViewById(R.id.iv_33)
         iv_34 = findViewById(R.id.iv_34)
         atras = findViewById(R.id.btn_back)
-
-        //ib_sonido = findViewById(R.id.ib_sonido)
-        //ib_sonido.setColorFilter(Color.GREEN)
-        //sonido("fondo",true)
 
         //etiqueta para cartas
         iv_11.tag = "0"
@@ -115,8 +108,6 @@ class Memoria : AppCompatActivity() {
             }
         }
         cartasArray.shuffle()
-        //tv_j1.setTextColor(Color.GRAY)
-        //tv_j2.setTextColor(Color.WHITE)
         iv_11.setOnClickListener { seleccionar(it) }
         iv_12.setOnClickListener { seleccionar(it) }
         iv_13.setOnClickListener { seleccionar(it) }
@@ -174,7 +165,7 @@ class Memoria : AppCompatActivity() {
             val h = Handler(Looper.getMainLooper())
             h.postDelayed({sonImagenesIguales()}, 1000)
         }
-
+        mpClick?.start()
     }
 
     private fun sonImagenesIguales() {
@@ -247,6 +238,7 @@ class Memoria : AppCompatActivity() {
                 .setNegativeButton("Salir"){dialog, which ->
                     finish()
                 }
+            mpVictoria?.start()
             builder.show()
         }
 
@@ -267,28 +259,4 @@ class Memoria : AppCompatActivity() {
         iv_34.isEnabled = false
     }
 
-/*
-
-    private fun sonido(sonidoName: String, loop: Boolean=false) {
-        var resID = resources.getIdentifier(
-            sonidoName, "raw", packageName
-        )
-        if (sonidoName == "fondo") {
-            mp_fondo = MediaPlayer.create(this, resID)
-            mp_fondo.isLooping = loop
-            mp_fondo.setVolume(0.04F, 0.04F)
-            if (!mp_fondo.isPlaying){
-                mp_fondo.start()
-            }
-        } else {
-            mp = MediaPlayer.create(this, resID)
-            mp.setOnCompletionListener (MediaPlayer.OnCompletionListener {mediaPlayer ->
-                mediaPlayer.stop()
-                mediaPlayer.release()
-            })
-            if (!mp.isPlaying){
-                mp.start()
-            }
-        }
-    }*/
 }
