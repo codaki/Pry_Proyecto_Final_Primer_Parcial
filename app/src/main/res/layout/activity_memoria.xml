@@ -20,4 +20,185 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043"
         app:srcCompat="@drawable/botonregresar2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="423dp"
+        android:layout_height="299dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:id="@+id/iv_11"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_12"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_13"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_14"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:id="@+id/iv_21"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_22"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_23"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_24"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:id="@+id/iv_31"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_32"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_33"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+
+            <ImageView
+                android:id="@+id/iv_34"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:src="@drawable/tarjeta_peque"
+                tools:srcCompat="@drawable/tarjeta_peque" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_sonido"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="61dp"
+        android:layout_height="62dp"
+        android:background="#CCFF90"
+        android:contentDescription="volumen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043"
+        app:srcCompat="@drawable/volume" />
+
+    <TextView
+        android:id="@+id/tv_j1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4A136C"
+        android:backgroundTint="#014753"
+        android:paddingHorizontal="8dp"
+        android:text="J1: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <TextView
+        android:id="@+id/tv_j2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4A136C"
+        android:backgroundTint="#014753"
+        android:paddingHorizontal="8dp"
+        android:text="J2: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -70,7 +70,7 @@ class Bingo : AppCompatActivity() {
             }
         }
 
-
+/*
         lblNum1.setOnClickListener { onNumeroSeleccionado(0, 0) }
         lblNum2.setOnClickListener { onNumeroSeleccionado(0, 1) }
         lblNum3.setOnClickListener { onNumeroSeleccionado(0, 2) }
@@ -79,7 +79,7 @@ class Bingo : AppCompatActivity() {
         lblNum6.setOnClickListener { onNumeroSeleccionado(1, 2) }
         lblNum7.setOnClickListener { onNumeroSeleccionado(2, 0) }
         lblNum8.setOnClickListener { onNumeroSeleccionado(2, 1) }
-        lblNum9.setOnClickListener { onNumeroSeleccionado(2, 2) }
+        lblNum9.setOnClickListener { onNumeroSeleccionado(2, 2) }*/
 
         lblNum1.text = matrizResultados[0][0].toString()
         lblNum2.text = matrizResultados[0][1].toString()
