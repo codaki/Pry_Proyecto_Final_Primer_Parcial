@@ -70,27 +70,19 @@ class Bingo : AppCompatActivity() {
             }
         }
 
-/*
-        lblNum1.setOnClickListener { onNumeroSeleccionado(0, 0) }
-        lblNum2.setOnClickListener { onNumeroSeleccionado(0, 1) }
-        lblNum3.setOnClickListener { onNumeroSeleccionado(0, 2) }
-        lblNum4.setOnClickListener { onNumeroSeleccionado(1, 0) }
-        lblNum5.setOnClickListener { onNumeroSeleccionado(1, 1) }
-        lblNum6.setOnClickListener { onNumeroSeleccionado(1, 2) }
-        lblNum7.setOnClickListener { onNumeroSeleccionado(2, 0) }
-        lblNum8.setOnClickListener { onNumeroSeleccionado(2, 1) }
-        lblNum9.setOnClickListener { onNumeroSeleccionado(2, 2) }*/
+        lblNum1.text = matrizOriginal[0][0].toString()
+        lblNum2.text = matrizOriginal[0][1].toString()
+        lblNum3.text = matrizOriginal[0][2].toString()
+        lblNum4.text = matrizOriginal[1][0].toString()
+        lblNum5.text = matrizOriginal[1][1].toString()
+        lblNum6.text = matrizOriginal[1][2].toString()
+        lblNum7.text = matrizOriginal[2][0].toString()
+        lblNum8.text = matrizOriginal[2][1].toString()
+        lblNum9.text = matrizOriginal[2][2].toString()
+    }
 
-        lblNum1.text = matrizResultados[0][0].toString()
-        lblNum2.text = matrizResultados[0][1].toString()
-        lblNum3.text = matrizResultados[0][2].toString()
-        lblNum4.text = matrizResultados[1][0].toString()
-        lblNum5.text = matrizResultados[1][1].toString()
-        lblNum6.text = matrizResultados[1][2].toString()
-        lblNum7.text = matrizResultados[2][0].toString()
-        lblNum8.text = matrizResultados[2][1].toString()
-        lblNum9.text = matrizResultados[2][2].toString()
-
+    fun check(){
 
     }
+
 }

@@ -32,7 +32,9 @@
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.672"
+        android:onClick="check"
+        android:hint="1 2"/>
 
     <TextView
         android:id="@+id/num_1"
@@ -47,7 +49,9 @@
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.498"
+        android:onClick="check"
+        android:hint="0 0"/>
 
     <TextView
         android:id="@+id/num_8"
@@ -62,7 +66,9 @@
         app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.854"
+        android:onClick="check"
+        android:hint="2 1"/>
 
     <TextView
         android:id="@+id/num_9"
@@ -77,7 +83,9 @@
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.854"
+        android:onClick="check"
+        android:hint="2 2"/>
 
     <TextView
         android:id="@+id/num_5"
@@ -92,7 +100,9 @@
         app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.672"
+        android:onClick="check"
+        android:hint="1 1"/>
 
     <TextView
         android:id="@+id/num_7"
@@ -107,7 +117,9 @@
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.854"
+        android:onClick="check"
+        android:hint="2 0"/>
 
     <TextView
         android:id="@+id/num_4"
@@ -122,7 +134,9 @@
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.672"
+        android:onClick="check"
+        android:hint="1 0"/>
 
     <TextView
         android:id="@+id/num_3"
@@ -137,7 +151,9 @@
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.498"
+        android:onClick="check"
+        android:hint="0 2"/>
 
     <TextView
         android:id="@+id/num_2"
@@ -152,7 +168,9 @@
         app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.498"
+        android:onClick="check"
+        android:hint="0 1"/>
 
     <TextView
         android:id="@+id/intercambiable"
