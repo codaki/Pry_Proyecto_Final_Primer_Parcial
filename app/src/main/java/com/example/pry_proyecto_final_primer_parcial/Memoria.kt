@@ -17,7 +17,6 @@ import android.widget.TextView
 import org.w3c.dom.Text
 
 class Memoria : AppCompatActivity() {
-    //<editor-fold desc="Imagenes">
     lateinit var iv_11: ImageView
     lateinit var iv_12: ImageView
     lateinit var iv_13: ImageView
@@ -32,11 +31,6 @@ class Memoria : AppCompatActivity() {
     lateinit var iv_32: ImageView
     lateinit var iv_33: ImageView
     lateinit var iv_34: ImageView
-    //</editor-fold>
-
-    //<editor-fold desc="Otros">
-    //lateinit var tv_j1: TextView
-    //lateinit var tv_j2: TextView
     lateinit var ib_sonido: ImageButton
     lateinit var atras: ImageButton
     lateinit var imagen1: ImageView
@@ -47,9 +41,6 @@ class Memoria : AppCompatActivity() {
     lateinit var resultado: TextView
     private var mpVictoria: MediaPlayer? = null
     private var mpClick: MediaPlayer? = null
-    //</editor-fold>
-
-    //<editor-fold desc="Variables">
     var cartasArray =
         arrayOf(11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26)
     var ecuacion1 = 0
@@ -67,9 +58,8 @@ class Memoria : AppCompatActivity() {
 
 
 
-    var numeroImagen = 1 //cuàntas veces di click
+    var numeroImagen = 1
     var escuchar = true
-    //</editor-fold>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,13 +121,9 @@ class Memoria : AppCompatActivity() {
 
 
         atras.setOnClickListener(){
-            Intent (this, MainActivity::class.java).also {
-                startActivity(it)
-            }
+            finish()
         }
         cartasArray.shuffle()
-        //tv_j1.setTextColor(Color.GRAY)
-        //tv_j2.setTextColor(Color.WHITE)
         iv_11.setOnClickListener { seleccionar(it) }
         iv_12.setOnClickListener { seleccionar(it) }
         iv_13.setOnClickListener { seleccionar(it) }
@@ -290,29 +276,4 @@ class Memoria : AppCompatActivity() {
         iv_33.isEnabled = false
         iv_34.isEnabled = false
     }
-
-    /*
-
-        private fun sonido(sonidoName: String, loop: Boolean=false) {
-            var resID = resources.getIdentifier(
-                sonidoName, "raw", packageName
-            )
-            if (sonidoName == "fondo") {
-                mp_fondo = MediaPlayer.create(this, resID)
-                mp_fondo.isLooping = loop
-                mp_fondo.setVolume(0.04F, 0.04F)
-                if (!mp_fondo.isPlaying){
-                    mp_fondo.start()
-                }
-            } else {
-                mp = MediaPlayer.create(this, resID)
-                mp.setOnCompletionListener (MediaPlayer.OnCompletionListener {mediaPlayer ->
-                    mediaPlayer.stop()
-                    mediaPlayer.release()
-                })
-                if (!mp.isPlaying){
-                    mp.start()
-                }
-            }
-        }*/
 }

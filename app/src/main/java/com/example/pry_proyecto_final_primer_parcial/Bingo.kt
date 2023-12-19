@@ -129,7 +129,7 @@ class Bingo : AppCompatActivity() {
     }
 
     private fun generarNumeroAleatorio(): Int {
-        return Random.nextInt(1, 5) // Genera un número aleatorio entre 1 y 4
+        return Random.nextInt(1, 5)
     }
 
     fun check(v: View){

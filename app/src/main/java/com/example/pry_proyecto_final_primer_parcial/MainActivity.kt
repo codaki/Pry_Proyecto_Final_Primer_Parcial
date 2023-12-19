@@ -34,18 +34,12 @@ class MainActivity : AppCompatActivity() {
         }
         mediaPlayerFondo = MediaPlayer.create(this, R.raw.fondo)
 
-        // Configura para repetir en bucle
         mediaPlayerFondo?.isLooping = true
-
-        // Ajusta el volumen (rango de 0.0 a 1.0)
-        mediaPlayerFondo?.setVolume(0.4f, 0.4f) // Ajusta según lo bajo que quieras el volumen
-
-        // Inicia la reproducción
+        mediaPlayerFondo?.setVolume(0.4f, 0.4f)
         mediaPlayerFondo?.start()
     }
     override fun onDestroy() {
         super.onDestroy()
-        // Asegúrate de liberar los recursos del MediaPlayer
         mediaPlayerFondo?.release()
     }
 }
